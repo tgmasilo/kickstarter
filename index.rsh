@@ -29,8 +29,8 @@ export const main = Reach.App(
     Participant('Admin', OwnerInterface), ParticipantClass('Backer', BackerInterface),
   ],
   (Admin, Backer) => {
-    const showOutcome = (winners) =>
-      each([Admin, Backer], () => interact.showOutcome(winners));
+    const showOutcome = (backers) =>
+      each([Admin, Backer], () => interact.showOutcome(backers));
 
     Admin.only(() => {
       const { minimumContribution, deadline } = declassify(interact.getParams()); });
